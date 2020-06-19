@@ -37,6 +37,9 @@ namespace Microsoft.Extensions.Primitives
             }
         }
 
+        [System.Runtime.InteropServices.DllImport("kernel32.dll", EntryPoint = "CopyMemory", SetLastError = false)]
+        private static extern void CopyMemory(IntPtr dest, IntPtr src, uint count);
+
         public unsafe void Append(string s)
         {
             EnsureCapacity(s.Length);
@@ -44,7 +47,8 @@ namespace Microsoft.Extensions.Primitives
             fixed (char* source = s)
             {
                 //TODO: https://github.com/aspnet/Common/issues/158
-                Unsafe.CopyBlock(destination + _offset, source, (uint)s.Length * 2);
+                //Unsafe.CopyBlock(destination + _offset, source, (uint)s.Length * 2);
+                CopyMemory(new IntPtr(destination + _offset), new IntPtr(source), (uint)s.Length * 2);
                 _offset += s.Length;
             }
         }

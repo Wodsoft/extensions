@@ -13,17 +13,17 @@ namespace Microsoft.Extensions.Internal
 
         public int CombinedHash
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            [MethodImpl(256)]
             get { return _combinedHash64.GetHashCode(); }
         }
-        
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+
+        [MethodImpl(256)]
         private HashCodeCombiner(long seed)
         {
             _combinedHash64 = seed;
         }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [MethodImpl(256)]
         public void Add(IEnumerable e)
         {
             if (e == null)
@@ -42,40 +42,40 @@ namespace Microsoft.Extensions.Internal
             }
         }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [MethodImpl(256)]
         public static implicit operator int(HashCodeCombiner self)
         {
             return self.CombinedHash;
         }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [MethodImpl(256)]
         public void Add(int i)
         {
             _combinedHash64 = ((_combinedHash64 << 5) + _combinedHash64) ^ i;
         }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [MethodImpl(256)]
         public void Add(string s)
         {
             var hashCode = (s != null) ? s.GetHashCode() : 0;
             Add(hashCode);
         }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [MethodImpl(256)]
         public void Add(object o)
         {
             var hashCode = (o != null) ? o.GetHashCode() : 0;
             Add(hashCode);
         }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [MethodImpl(256)]
         public void Add<TValue>(TValue value, IEqualityComparer<TValue> comparer)
         {
             var hashCode = value != null ? comparer.GetHashCode(value) : 0;
             Add(hashCode);
         }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [MethodImpl(256)]
         public static HashCodeCombiner Start()
         {
             return new HashCodeCombiner(0x1505L);

@@ -1,0 +1,45 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netcoreapp1.1;net451</TargetFrameworks>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <AssemblyName>Microsoft.Extensions.Internal.Test</AssemblyName>
+    <PackageId>Microsoft.Extensions.Internal.Test</PackageId>
+    <GenerateRuntimeConfigurationFiles>true</GenerateRuntimeConfigurationFiles>
+    <RuntimeFrameworkVersion Condition=" '$(TargetFramework)' == 'netcoreapp1.1' ">1.1.10</RuntimeFrameworkVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="..\..\src\*.Sources\**\*.resx" Exclude="bin\**;obj\**;**\*.xproj;packages\**;@(EmbeddedResource)" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Microsoft.Extensions.ClosedGenericMatcher.Sources\Microsoft.Extensions.ClosedGenericMatcher.Sources.csproj" />
+    <ProjectReference Include="..\..\src\Microsoft.Extensions.CopyOnWriteDictionary.Sources\Microsoft.Extensions.CopyOnWriteDictionary.Sources.csproj" />
+    <ProjectReference Include="..\..\src\Microsoft.Extensions.DotnetToolDispatcher.Sources\Microsoft.Extensions.DotnetToolDispatcher.Sources.csproj" />
+    <ProjectReference Include="..\..\src\Microsoft.Extensions.HashCodeCombiner.Sources\Microsoft.Extensions.HashCodeCombiner.Sources.csproj" />
+    <ProjectReference Include="..\..\src\Microsoft.Extensions.PropertyActivator.Sources\Microsoft.Extensions.PropertyActivator.Sources.csproj" />
+    <ProjectReference Include="..\..\src\Microsoft.Extensions.PropertyHelper.Sources\Microsoft.Extensions.PropertyHelper.Sources.csproj" />
+    <ProjectReference Include="..\..\src\Microsoft.Extensions.SecurityHelper.Sources\Microsoft.Extensions.SecurityHelper.Sources.csproj" />
+    <ProjectReference Include="..\..\src\Microsoft.Extensions.TypeNameHelper.Sources\Microsoft.Extensions.TypeNameHelper.Sources.csproj" />
+    <ProjectReference Include="..\..\src\Microsoft.Extensions.WebEncoders.Sources\Microsoft.Extensions.WebEncoders.Sources.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.0.0-preview-20170106-08" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.2.0-beta5-build1225" />
+    <PackageReference Include="Microsoft.DotNet.Cli.Utils" Version="1.0.0-preview2-003121" />
+    <PackageReference Include="Moq" Version="4.6.36-*" />
+    <PackageReference Include="xunit" Version="2.2.0-beta5-build3474" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'netcoreapp1.1' ">
+    <PackageReference Include="System.Diagnostics.TraceSource" Version="4.3.0" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net451' ">
+    <Reference Include="System" />
+    <Reference Include="Microsoft.CSharp" />
+  </ItemGroup>
+
+</Project>

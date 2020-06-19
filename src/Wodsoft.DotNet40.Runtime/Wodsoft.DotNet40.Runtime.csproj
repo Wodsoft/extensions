@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Description>
+      Porting primitives from NETStandard to NET40. Commonly used types include:
+      System.Collections.Generic.IReadOnlyCollection
+      System.Collections.Generic.IReadOnlyDictionary
+      System.Collections.Generic.IReadOnlyList
+      System.Collections.Generic.IReadOnlySet
+      System.Collections.ObjectModel.ReadOnlyCollection2
+    </Description>
+    <VersionPrefix>1.0.1</VersionPrefix>
+    <TargetFramework>net40</TargetFramework>
+    <RootNamespace>System</RootNamespace>
+    <SignAssembly>true</SignAssembly>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <AssemblyOriginatorKeyFile>key.snk</AssemblyOriginatorKeyFile>
+    <PackageId>Wodsoft.DotNet40.Runtime</PackageId>
+    <PackageTags>primitives</PackageTags>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/wodsoft/extensions</RepositoryUrl>
+    <IncludeSymbols>true</IncludeSymbols>
+    <GenerateNeutralResourcesLanguageAttribute>false</GenerateNeutralResourcesLanguageAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyCopyrightAttribute>false</GenerateAssemblyCopyrightAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+  </PropertyGroup>
+
+</Project>
