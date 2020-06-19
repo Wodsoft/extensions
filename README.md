@@ -1,8 +1,10 @@
 Common
 ===
-AppVeyor: [![AppVeyor](https://ci.appveyor.com/api/projects/status/snawy2a2vt0vd7dv/branch/dev?svg=true)](https://ci.appveyor.com/project/aspnetci/Common/branch/dev)
+### Porting for .Net Framework 4.0 base on version 1.1.1.
 
-Travis:   [![Travis](https://travis-ci.org/aspnet/Common.svg?branch=dev)](https://travis-ci.org/aspnet/Common)
+## Install package with:
+* [Wodsoft.Extensions.Primitives](https://www.nuget.org/packages/Wodsoft.Extensions.Primitives)
+* [Wodsoft.DotNet40.Runtime](https://www.nuget.org/packages/Wodsoft.DotNet40.Runtime)
 
 The Common repository includes projects containing commonly used primitives and utility types.
 
