@@ -9,11 +9,11 @@ namespace System.Collections.ObjectModel
 {
     [Serializable]
     [DebuggerDisplay("Count = {Count}")]
-    public class ReadOnlyCollection2<T> : IList<T>, IList, IReadOnlyList<T>
+    public class ReadOnlyCollection<T> : IList<T>, IList, IReadOnlyList<T>
     {
         private readonly IList<T> list; // Do not rename (binary serialization)
 
-        public ReadOnlyCollection2(IList<T> list)
+        public ReadOnlyCollection(IList<T> list)
         {
             if (list == null)
             {
