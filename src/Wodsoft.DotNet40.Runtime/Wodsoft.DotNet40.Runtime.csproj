@@ -8,9 +8,10 @@
       System.Collections.Generic.IReadOnlyList
       System.Collections.Generic.IReadOnlySet
       System.Collections.ObjectModel.ReadOnlyCollection2
+      System.Collections.ObjectModel.ReadOnlyDictionary
       System.Security.Cryptography.IncrementalHash
     </Description>
-    <VersionPrefix>1.0.2</VersionPrefix>
+    <VersionPrefix>1.0.3</VersionPrefix>
     <TargetFramework>net40</TargetFramework>
     <RootNamespace>System</RootNamespace>
     <SignAssembly>true</SignAssembly>
